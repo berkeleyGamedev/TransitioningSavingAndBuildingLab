@@ -3,21 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class candy : MonoBehaviour {
+[DisallowMultipleComponent]
+public class Candy : MonoBehaviour
+{
+    #region Editor Variables
+    [SerializeField]
+    [Tooltip("The UI element that displays the number of candies.")]
+    private Text m_CandyText;
+    #endregion
 
-    public Text candyText; //UI element that displays the number of candies
-    GameObject player;
-    playerController controller;
+    #region Cached References
+    GameObject cr_Player;
+    PlayerController cr_Controller;
+    #endregion
 
-	// Use this for initialization
-	void Start () {
-        player = GameObject.Find("Player");
-        controller = player.GetComponent<playerController>();
+    #region Initialization Methods
+    private void Start ()
+    {
+        cr_Player = GameObject.Find("Player");
+        cr_Controller = cr_Player.GetComponent<PlayerController>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
+    #endregion
+
+    #region Main Updates
+    private void Update ()
+    {
         //Continually updates the UI text for the number of candies collected
-        candyText.text = "Candies: " + controller.checkCandy().ToString();
+        m_CandyText.text = "Candies: " + cr_Controller.NumCandies.ToString();
 	}
+    #endregion
 }

@@ -2,40 +2,56 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerController : MonoBehaviour {
+[DisallowMultipleComponent]
+[RequireComponent(typeof(Rigidbody2D))]
+public class PlayerController : MonoBehaviour
+{
+    #region Editor Variables
+    [SerializeField]
+    [Tooltip("How quickly the player can move around.")]
+    private int m_Speed;
+    #endregion
 
-    Rigidbody2D rb;
-    public int speed;
-    int candy;
+    #region Private Variables
+    // The amount of candy that the player currently has
+    private int p_NumCandies;
+    #endregion
 
-	// Use this for initialization
-	void Start () {
-        rb = GetComponent<Rigidbody2D>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    #region Cached Components
+    private Rigidbody2D cc_Rb;
+    #endregion
+
+    #region Initialization Methods
+    private void Start()
+    {
+        cc_Rb = GetComponent<Rigidbody2D>();
+    }
+    #endregion
+
+    #region Main Updates
+    void Update () {
         float vel = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(vel * speed, 0);
+        cc_Rb.velocity = new Vector2(vel * m_Speed, 0);
 	}
+    #endregion
 
+    #region Collision Methods
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //increase candy count and destroy the candy when the player collides with a candy
         if (collision.gameObject.tag.Equals("candy"))
         {
-            candy += 1;
+            p_NumCandies += 1;
             Destroy(collision.gameObject);
         }
-    } 
-
-    public int checkCandy()
-    {
-        return candy;
     }
+    #endregion
 
-    public void setCandy(int num)
+    #region Accessors and Mutators
+    public int p_NumCandies
     {
-        candy = num;
+        get { return p_NumCandies; }
+        set { p_NumCandies = value; }
     }
+    #endregion
 }

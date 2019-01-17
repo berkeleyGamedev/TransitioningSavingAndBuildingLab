@@ -569,7 +569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e162d7ab745c554c94cbaab234f1568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  m_Speed: 5
 --- !u!50 &962296914
 Rigidbody2D:
   serializedVersion: 4
@@ -729,7 +729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b62facdc922dc43b52ba79ed64a206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  candyText: {fileID: 1227041491}
+  m_CandyText: {fileID: 1227041491}
 --- !u!114 &1227041491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1161,7 +1161,7 @@ GameObject:
   - component: {fileID: 2062444268}
   - component: {fileID: 2062444269}
   m_Layer: 0
-  m_Name: gameController
+  m_Name: GameController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1193,8 +1193,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d03ce1157eb46743ab78dbe59ae7ded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapPiece: {fileID: 1152124754400572, guid: 0a1aa01b685dec7459ed4de0a078f0da, type: 3}
-  candyPrefab: {fileID: 1663572091748158, guid: 3f4be1ce73540eb429abd22dff856a73,
+  m_MapPiece: {fileID: 1152124754400572, guid: 0a1aa01b685dec7459ed4de0a078f0da, type: 3}
+  m_CandyPrefab: {fileID: 1663572091748158, guid: 3f4be1ce73540eb429abd22dff856a73,
     type: 3}
 --- !u!1 &2129942027
 GameObject:

@@ -1,24 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class sceneController : MonoBehaviour {
+[DisallowMultipleComponent]
+public class SceneController : MonoBehaviour
+{
+    #region Editor Variables
+    [SerializeField]
+    [Tooltip("A place to keep the default player object in the level. If a player object already exists, delete this one.")]
+    private GameObject m_Player;
+    #endregion
     
-    public GameObject player;
+    #region Private Variables    
+    #endregion
 
+    #region Initialization Methods
     private void Awake()
     {
 
     }
-
-	// Use this for initialization
-	void Start () {
-        player = GameObject.Find("Player");
+    
+	private void Start ()
+    {
+        m_Player = GameObject.Find("Player");
 	}
-	
-	// Update is called once per frame
-	void Update () {
+    #endregion
+
+    #region Main Updates
+    private void Update ()
+    {
 
 	}
+    #endregion
 }
