@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region Accessors and Mutators
-    public int p_NumCandies
+    public int NumCandies
     {
         get { return p_NumCandies; }
         set { p_NumCandies = value; }

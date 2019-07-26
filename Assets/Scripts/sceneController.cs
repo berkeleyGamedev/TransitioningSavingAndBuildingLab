@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [DisallowMultipleComponent]
 public class SceneController : MonoBehaviour
@@ -9,13 +10,13 @@ public class SceneController : MonoBehaviour
     [SerializeField]
     [Tooltip("A place to keep the default player object in the level. If a player object already exists, delete this one.")]
     private GameObject m_Player;
-    #endregion
-    
-    #region Private Variables    
-    #endregion
+	#endregion
 
-    #region Initialization Methods
-    private void Awake()
+	#region Private Variables
+	#endregion
+
+	#region Initialization Methods
+	private void Awake()
     {
 
     }
